@@ -1,7 +1,7 @@
 
 
-// import HomePage from "@/app/homepage/page";
-import HomePage from "@/app/about/page";
+import HomePage from "@/app/homepage/page";
+// import HomePage from "@/app/about/page";
 
 
 const HomePageWrapper = () => {
