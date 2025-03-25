@@ -1,0 +1,20 @@
+body{
+    background-image: url('/assets/backround.png');
+}
+.s-img{
+   width: 30px;
+   height: 30px;
+}
+
+.images{
+    width: 15%;
+    height: 30%;
+}
+
+.miepay{
+    bottom: 190px;
+   
+}
+.download{
+   color: rgb(248, 224, 72);
+}
