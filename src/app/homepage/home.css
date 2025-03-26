@@ -7,8 +7,20 @@ body{
 }
 
 .social-media{
-    top: 86%;
+    top: 100%;
 }
 .logo-center{
     width: 30%;
 }
+
+@media(max-width:757px){
+    .logo-center{
+        width: 50%;
+    }
+}
+@media(max-width:447px){
+    .logo-center{
+        width: 70%;
+    }
+}
+

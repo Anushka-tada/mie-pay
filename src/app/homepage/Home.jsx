@@ -35,7 +35,7 @@ const Home = () => {
      </div>
 
      <div className="social-media absolute">
-        <ul className='flex flex-col gap-1 ms-16'>
+        <ul className='flex flex-col gap-1 ms-10'>
             <li>  <img src="/assets/insta.png" alt="Logo" className='s-img' /></li>
             <li> <img src="/assets/tiktok.png" alt="Logo" className='s-img' /></li>
             <li>  <img src="/assets/youtube.png" alt="Logo"  className='s-img'/></li>
