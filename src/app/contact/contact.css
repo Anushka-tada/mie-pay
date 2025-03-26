@@ -1,0 +1,64 @@
+body{
+    background-image: url('/assets/backround.png');
+    height: 100%;
+}
+.s-img{
+   width: 30px;
+   height: 30px;
+}
+.contact-form{
+    box-shadow: -7px 2px 35px 5px rgb(29, 29, 29);
+    width: 85%;
+}
+input {
+    
+    border-bottom: 2px solid rgb(185, 185, 185);
+    outline: none !important;
+}
+
+input:focus {
+  
+    outline: none !important;
+    border-bottom: 2px solid rgb(229, 223, 187);
+}
+
+
+.send-button{
+    width: 270px;
+    box-shadow: 1px 4px 35px 5px rgb(21, 21, 21);
+}
+.contact-text{
+    width: 410px;
+}
+
+.social-media{
+    top: 83%;
+}
+
+@media(max-width:1024px){
+    .contact-form{
+        box-shadow: -7px 2px 35px 5px rgb(29, 29, 29);
+        width: 55%;
+    }
+    .social-media{
+        top: 100%;
+    }
+}
+@media(max-width:896px){
+    .contact-text{
+        width: 310px;
+    }
+}
+@media(max-width:767px){
+    .contact-text{
+        width: 90%;
+    }
+    .contact-form{
+        background-image: url('/assets/backround.png');
+        width: 95%;
+    }
+}
+
+.contact-us{
+    width: 80%;
+}

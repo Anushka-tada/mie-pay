@@ -6,15 +6,47 @@ body{
    height: 30px;
 }
 
-.images{
-    width: 15%;
-    height: 30%;
+.social-media{
+    top: 86%;
+}
+
+.left-img , .right-img {
+    width: 28% !important; 
+    height: 28%; 
+}
+
+.center-img{
+    width: 32% !important; 
+    height: 30%; 
 }
 
 .miepay{
-    bottom: 190px;
-   
+    bottom: 35%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .download{
    color: rgb(248, 224, 72);
+}
+
+@media (max-width:818px){
+    .miepay{
+        bottom: 45%;
+    }
+}
+@media (max-width:530px){
+    .miepay{
+        bottom: 55%;
+    }
+}
+
+@media (max-width:434px){
+    .miepay{
+        bottom: 65%;
+    }
+}
+@media (max-width:342px){
+    .miepay{
+        bottom: 70%;
+    }
 }
