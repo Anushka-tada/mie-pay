@@ -1,14 +1,15 @@
 
 
 import HomePage from "@/app/homepage/page";
-// import HomePage from "@/app/about/page";
-
+import AboutPage from "@/app/about/page";
+import ContactPage from "@/app/contact/page";
 
 const HomePageWrapper = () => {
   return(<>
 
- {/* <HomePage/> */}
  <HomePage/>
+ {/* <AboutPage/>
+ <ContactPage/> */}
 
   </>)
   

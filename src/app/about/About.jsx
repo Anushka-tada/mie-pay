@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className='homepage relative'>
 
-      <div className="navbar flex  lg:flex-row justify-between px-6 lg:px-16 py-4 lg:py-7 items-center">
+      {/* <div className="navbar flex  lg:flex-row justify-between px-6 lg:px-16 py-4 lg:py-7 items-center">
         <img src="/assets/logomain.png" alt="Logo" />
         <button
           className="lg:hidden block text-white text-3xl"
@@ -25,7 +25,7 @@ const About = () => {
           <a href="/about">   <li className="text-white text-lg uppercase">About</li></a>
           <a href="/contact"><li className="text-white text-lg uppercase">Contact</li></a>
         </ul>
-      </div>
+      </div> */}
 
 
       <div className="herosection flex flex-col items-center relative">
@@ -46,7 +46,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="social-media absolute ">
+      {/* <div className="social-media absolute ">
         <ul className='flex flex-col gap-1 ms-10 '>
 
           <li>  <img src="/assets/insta.png" alt="Logo" className='s-img' /></li>
@@ -57,7 +57,7 @@ const About = () => {
           <li> <img src="/assets/linkedin.png" alt="Logo" className='s-img' /></li>
 
         </ul>
-      </div>
+      </div> */}
 
     </div>
   )

@@ -1,4 +1,4 @@
-body{
+.homepage{
     background-image: url('/assets/backround.png');
     height: 100%;
 }
@@ -55,10 +55,13 @@ input:focus {
     }
     .contact-form{
         background-image: url('/assets/backround.png');
-        width: 95%;
+        width: 99%;
     }
 }
 
 .contact-us{
     width: 80%;
+}
+.contact-sections{
+    width: 100%;
 }
