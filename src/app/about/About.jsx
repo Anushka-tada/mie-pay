@@ -35,7 +35,7 @@ const About = () => {
           <img src="/assets/right.png" alt="Logo" className='mt-10 right-img' />
         </div>
         <img src="/assets/miePay.png" alt="Logo" className='absolute miepay' />
-        <p className='text-zinc-400 text-lg xl:px-80 lg:px-72 md:px-40 sm:px-20 px-7 text-center mt-6'>Your secure digital wallet designed for seamless payments. We simplify transactions with transparent
+        <p className='text-zinc-400 text-lg xl:px-80 lg:px-72 md:px-40 sm:px-20 px-7 text-center '>Your secure digital wallet designed for seamless payments. We simplify transactions with transparent
           tracking and zero hidden fees. Soon expanding to multiple services, Mie Pay makes managing
           your money effortless and worry-free.
         </p>

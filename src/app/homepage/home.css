@@ -1,5 +1,6 @@
 .homepage{
      background-image: url('/assets/backround.png');
+     padding-bottom: 87px;
 }
 .s-img{
     width: 30px;
@@ -17,6 +18,15 @@
     .logo-center{
         width: 50%;
     }
+    .social-media-inner{
+       flex-direction: row !important;
+      
+    }
+    .social-media{
+        top: 98%;
+        
+    }
+
 }
 @media(max-width:447px){
     .logo-center{
@@ -43,3 +53,4 @@
   }
   
 
+  

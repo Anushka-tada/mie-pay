@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <div className='relative'>
-      <div className='homepage pb-24 ' id='home'>
+      <div className='homepage ' id='home'>
 
         <div className={`navbar fixed top-0 left-0 w-full z-50 flex lg:flex-row justify-between px-5 lg:px-16  items-center transition-colors duration-300 ${isScrolled ? "bg-gray py-0 lg:py-0" : "bg-transparent py-3 lg:py-6"}`} >
           <img src="/assets/logomain.png" alt="Logo" />
@@ -84,21 +84,10 @@ const Home = () => {
           <h1 className='font-bold xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white  mt-4'>Refer.Earn.Repeat</h1>
         </div>
 
-        {/* <div className="social-media absolute">
-        <ul className='flex flex-col gap-1 ms-10'>
-            <li>  <img src="/assets/insta.png" alt="Logo" className='s-img' /></li>
-            <li> <img src="/assets/tiktok.png" alt="Logo" className='s-img' /></li>
-            <li>  <img src="/assets/youtube.png" alt="Logo"  className='s-img'/></li>
-            <li> <img src="/assets/threads.png" alt="Logo" className='s-img' /></li>
-            <li>  <img src="/assets/facebook.png" alt="Logo"className='s-img' /></li>
-            <li> <img src="/assets/linkedin.png" alt="Logo"className='s-img' /></li>
-        </ul>
-     </div> */}
-
       </div>
 
 
-      <div className='homepage relative py-16' id='about'>
+      <div className='aboutpage relative pb-6' id='about'>
 
         <div className="herosection flex flex-col items-center relative">
           <div className="images flex gap-4 justify-center  ">
@@ -107,11 +96,11 @@ const Home = () => {
             <img src="/assets/right.png" alt="Logo" className='mt-10 right-img' />
           </div>
           <img src="/assets/miePay.png" alt="Logo" className='absolute miepay' />
-          <p className='text-zinc-400 text-lg xl:px-80 lg:px-72 md:px-40 sm:px-20 px-7 text-center mt-6'>Your secure digital wallet designed for seamless payments. We simplify transactions with transparent
+          <p className='text-zinc-400 text-lg xl:px-80 lg:px-72 md:px-40 sm:px-20 px-7 text-center '>Your secure digital wallet designed for seamless payments. We simplify transactions with transparent
             tracking and zero hidden fees. Soon expanding to multiple services, Mie Pay makes managing
             your money effortless and worry-free.
           </p>
-          <div className='flex flex-wrap  gap-4 items-center justify-center mt-9 mb-9'>
+          <div className='flex flex-wrap  gap-4 items-center justify-center mt-6'>
             <p className='text-lg download '>DOWNLOAD NOW</p>
             <img src="/assets/app-store.png" alt="Logo" className='' />
             <img src="/assets/google-pay.png" alt="Logo" className='' />
@@ -126,7 +115,7 @@ const Home = () => {
 
         <div className="contact flex  flex-col items-center  pt-10 px-3">
           <div className="contact-sections flex flex-wrap justify-center  xl:flex-nowrap lg:flex-nowrap md:flex-nowrap items-center gap-20">
-            <div className="contact-text flex flex-col gap-4 items-center text-center">
+            <div className="contact-text flex flex-col gap-3 items-center text-center">
               <img src="/assets/contact.png" alt="Logo" />
               <h3 className='text-xl text-white font-semibold'>Have any questions about Mie Pay?</h3>
               <p className='text-zinc-400 text-2xl'>Our dedicated team is ready to assist you anytime! Reach us at.</p>
@@ -147,21 +136,21 @@ const Home = () => {
                 <img src="/assets/contact-us.png" alt="Logo" className='mb-8 contact-us' />
               </div>
               <form action="" className='flex flex-col gap-4'>
-                <div className="input flex flex-col gap-1">
+                <div className="input flex flex-col ">
                   <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Your name</label>
-                  <input type="text" />
+                  <input type="text" className="text-zinc-300" />
                 </div>
-                <div className="input flex flex-col gap-1">
+                <div className="input flex flex-col ">
                   <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Your email</label>
-                  <input type="text" />
+                  <input type="text" className="text-zinc-300" />
                 </div>
-                <div className="input flex flex-col gap-1">
+                <div className="input flex flex-col ">
                   <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Subject</label>
-                  <input type="text" />
+                  <input type="text"className="text-zinc-300" />
                 </div>
-                <div className="input flex flex-col gap-1">
+                <div className="input flex flex-col ">
                   <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Message</label>
-                  <input type="text" />
+                  <input type="text" className="text-zinc-300" />
                 </div>
 
                 <div className='flex justify-center mt-7'>
@@ -177,7 +166,7 @@ const Home = () => {
 
       </div>
       <div className="social-media absolute">
-        <ul className='flex flex-col gap-1 ms-10'>
+        <ul className='social-media-inner flex flex-col gap-1 ms-10'>
           <li>  <img src="/assets/insta.png" alt="Logo" className='s-img' /></li>
           <li> <img src="/assets/tiktok.png" alt="Logo" className='s-img' /></li>
           <li>  <img src="/assets/youtube.png" alt="Logo" className='s-img' /></li>

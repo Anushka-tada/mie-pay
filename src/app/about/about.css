@@ -1,5 +1,6 @@
-.homepage{
+.aboutpage{
     background-image: url('/assets/backround.png');
+    padding-top: 68px;
 }
 .s-img{
    width: 30px;
@@ -11,17 +12,17 @@
 }
 
 .left-img , .right-img {
-    width: 28% !important; 
-    height: 28%; 
+    width: 25% !important; 
+    height: 25%; 
 }
 
 .center-img{
-    width: 32% !important; 
-    height: 30%; 
+    width: 29% !important; 
+    height: 27%; 
 }
 
 .miepay{
-    bottom: 35%;
+    bottom: 32%;
     padding-left: 10px;
     padding-right: 10px;
 }
