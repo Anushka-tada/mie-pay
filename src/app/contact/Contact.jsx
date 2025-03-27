@@ -3,9 +3,30 @@
 import React from 'react'
 import "./contact.css"
 import { useState } from "react";
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 const Contact = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Name is required'),
+      email: Yup.string().email('Invalid email address').required('Email is required'),
+      subject: Yup.string().required('Subject is required'),
+      message: Yup.string().required('Message is required'),
+    }),
+    onSubmit: (values) => {
+      console.log('Form Submitted:', values);
+    },
+  });
+
   return (
     <div className='homepage relative'>
 
@@ -48,28 +69,66 @@ const Contact = () => {
             <div className='flex justify-center'>
               <img src="/assets/contact-us.png" alt="Logo" className='mb-8 contact-us' />
             </div>
-            <form action="" className='flex flex-col gap-4'>
+            <form onSubmit={formik.handleSubmit} className='flex flex-col gap-4'>
               <div className="input flex flex-col gap-1">
-                <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Your name</label>
-                <input type="text" />
+                <label htmlFor="name" className='text-zinc-400 text-lg font-semibold'>Your name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.name}
+                  className={formik.touched.name && formik.errors.name ? 'border-red-500' : ''}
+                />
+                {formik.touched.name && formik.errors.name ? <div className="text-red-500">{formik.errors.name}</div> : null}
               </div>
+
               <div className="input flex flex-col gap-1">
-                <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Your email</label>
-                <input type="text" />
+                <label htmlFor="email" className='text-zinc-400 text-lg font-semibold'>Your email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                  className={formik.touched.email && formik.errors.email ? 'border-red-500' : ''}
+                />
+                {formik.touched.email && formik.errors.email ? <div className="text-red-500">{formik.errors.email}</div> : null}
               </div>
+
               <div className="input flex flex-col gap-1">
-                <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Subject</label>
-                <input type="text" />
+                <label htmlFor="subject" className='text-zinc-400 text-lg font-semibold'>Subject</label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.subject}
+                  className={formik.touched.subject && formik.errors.subject ? 'border-red-500' : ''}
+                />
+                {formik.touched.subject && formik.errors.subject ? <div className="text-red-500">{formik.errors.subject}</div> : null}
               </div>
+
               <div className="input flex flex-col gap-1">
-                <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Message</label>
-                <input type="text" />
+                <label htmlFor="message" className='text-zinc-400 text-lg font-semibold'>Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.message}
+                  className={formik.touched.message && formik.errors.message ? 'border-red-500' : ''}
+                />
+                {formik.touched.message && formik.errors.message ? <div className="text-red-500">{formik.errors.message}</div> : null}
               </div>
 
               <div className='flex justify-center mt-7'>
-                <div className="send-button py-3 flex justify-center rounded-lg">
+                <button type="submit" className="send-button py-3 flex justify-center rounded-lg">
                   <p className='text-lg text-white font-semibold'>Send</p>
-                </div>
+                </button>
               </div>
             </form>
           </div>

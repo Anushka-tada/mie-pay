@@ -1,6 +1,10 @@
 .homepage{
      background-image: url('/assets/backround.png');
-     padding-bottom: 87px;
+     /* padding-bottom: 87px; */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     height: 100vh;
 }
 .s-img{
     width: 30px;

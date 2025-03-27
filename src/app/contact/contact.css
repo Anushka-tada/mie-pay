@@ -1,6 +1,12 @@
-.homepage{
+.contactpage{
     background-image: url('/assets/backround.png');
-    height: 100%;
+
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.contact{
+    width: 100%;
 }
 .s-img{
    width: 30px;
@@ -33,6 +39,16 @@ input:focus {
 
 .social-media{
     top: 83%;
+}
+
+@media(max-width:768px){
+    .contactpage{
+        background-image: url('/assets/backround.png');
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 30px 0px;
+    }
 }
 
 @media(max-width:1024px){

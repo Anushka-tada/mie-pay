@@ -1,6 +1,8 @@
 .aboutpage{
     background-image: url('/assets/backround.png');
-    padding-top: 68px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
 }
 .s-img{
    width: 30px;

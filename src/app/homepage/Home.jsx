@@ -4,11 +4,48 @@ import React from 'react'
 import "./home.css"
 import "../about/about.css"
 import "../contact/contact.css"
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import axios  from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Home = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
+
+   const formik = useFormik({
+      initialValues: {
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      },
+      validationSchema: Yup.object({
+        name: Yup.string().required('Name is required'),
+        email: Yup.string().email('Invalid email address').required('Email is required'),
+        subject: Yup.string().required('Subject is required'),
+        message: Yup.string().required('Message is required'),
+      }),
+      onSubmit: async (values) => {
+        console.log('Form Submitted:', values);
+
+        try{
+          let response = await axios.post("https://api.miepay.ca/api/store-query" , {...values , first_name: values.name})
+          console.log(response)
+
+          if(response.data.statusCode == 200){
+                toast.success(response.data.message)
+          }
+
+
+        }
+        catch(error){
+          toast.error( "Internal server error")
+        }
+      },
+    });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +75,7 @@ const Home = () => {
     <div className='relative'>
       <div className='homepage ' id='home'>
 
-        <div className={`navbar fixed top-0 left-0 w-full z-50 flex lg:flex-row justify-between px-5 lg:px-16  items-center transition-colors duration-300 ${isScrolled ? "bg-gray py-0 lg:py-0" : "bg-transparent py-3 lg:py-6"}`} >
+        <div className={`navbar absolute top-0 w-full  flex lg:flex-row justify-between px-5 lg:px-16  items-center transition-colors duration-300  py-3 lg:py-6`} >
           <img src="/assets/logomain.png" alt="Logo" />
           <button
             className="lg:hidden block text-white text-3xl"
@@ -79,7 +116,7 @@ const Home = () => {
 
 
 
-        <div className="herosection flex flex-col items-center pt-56 ">
+        <div className="herosection flex flex-col items-center ">
           <img src="/assets/logocenter4.png" alt="Logo" className='logo-center' />
           <h1 className='font-bold xl:text-5xl lg:text-4xl md:text-4xl sm:text-3xl text-3xl text-white  mt-4'>Refer.Earn.Repeat</h1>
         </div>
@@ -87,7 +124,7 @@ const Home = () => {
       </div>
 
 
-      <div className='aboutpage relative pb-6' id='about'>
+      <div className='aboutpage relative ' id='about'>
 
         <div className="herosection flex flex-col items-center relative">
           <div className="images flex gap-4 justify-center  ">
@@ -102,8 +139,8 @@ const Home = () => {
           </p>
           <div className='flex flex-wrap  gap-4 items-center justify-center mt-6'>
             <p className='text-lg download '>DOWNLOAD NOW</p>
-            <img src="/assets/app-store.png" alt="Logo" className='' />
-            <img src="/assets/google-pay.png" alt="Logo" className='' />
+            <a href="https://apps.apple.com/ca/app/mie-pay/id6742891477" target="blank"><img src="/assets/app-store.png" alt="Logo" className='' /></a>
+           <a href="https://play.google.com/store/apps/details?id=com.app.miepay" target="blank"> <img src="/assets/google-pay.png" alt="Logo" className='' /></a>
           </div>
         </div>
 
@@ -111,9 +148,9 @@ const Home = () => {
 
 
 
-      <div className='homepage relative pb-72 pt-14' id='contact'>
+      <div className='contactpage relative ' id='contact'>
 
-        <div className="contact flex  flex-col items-center  pt-10 px-3">
+        <div className="contact  flex  flex-col items-center ">
           <div className="contact-sections flex flex-wrap justify-center  xl:flex-nowrap lg:flex-nowrap md:flex-nowrap items-center gap-20">
             <div className="contact-text flex flex-col gap-3 items-center text-center">
               <img src="/assets/contact.png" alt="Logo" />
@@ -132,34 +169,72 @@ const Home = () => {
 
             </div>
             <div className="contact-form p-12 rounded-4xl flex flex-col justify-center">
-              <div className='flex justify-center'>
-                <img src="/assets/contact-us.png" alt="Logo" className='mb-8 contact-us' />
-              </div>
-              <form action="" className='flex flex-col gap-4'>
-                <div className="input flex flex-col ">
-                  <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Your name</label>
-                  <input type="text" className="text-zinc-300" />
-                </div>
-                <div className="input flex flex-col ">
-                  <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Your email</label>
-                  <input type="text" className="text-zinc-300" />
-                </div>
-                <div className="input flex flex-col ">
-                  <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Subject</label>
-                  <input type="text"className="text-zinc-300" />
-                </div>
-                <div className="input flex flex-col ">
-                  <label htmlFor="" className='text-zinc-400 text-lg font-semibold'>Message</label>
-                  <input type="text" className="text-zinc-300" />
-                </div>
-
-                <div className='flex justify-center mt-7'>
-                  <div className="send-button py-3 flex justify-center rounded-lg">
-                    <p className='text-lg text-white font-semibold'>Send</p>
-                  </div>
-                </div>
-              </form>
+            <div className='flex justify-center'>
+              <img src="/assets/contact-us.png" alt="Logo" className='mb-8 contact-us' />
             </div>
+            <form onSubmit={formik.handleSubmit} className='flex flex-col gap-4'>
+              <div className="input flex flex-col gap-1">
+                <label htmlFor="name" className='text-zinc-400 text-lg font-semibold'>Your name</label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.name}
+                  className={formik.touched.name && formik.errors.name ? 'border-red-500' : 'text-white'}
+                />
+                {formik.touched.name && formik.errors.name ? <div className="text-red-500">{formik.errors.name}</div> : null}
+              </div>
+
+              <div className="input flex flex-col gap-1">
+                <label htmlFor="email" className='text-zinc-400 text-lg font-semibold'>Your email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
+                  className={formik.touched.email && formik.errors.email ? 'border-red-500' : 'text-white'}
+                />
+                {formik.touched.email && formik.errors.email ? <div className="text-red-500">{formik.errors.email}</div> : null}
+              </div>
+
+              <div className="input flex flex-col gap-1">
+                <label htmlFor="subject" className='text-zinc-400 text-lg font-semibold'>Subject</label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.subject}
+                  className={formik.touched.subject && formik.errors.subject ? 'border-red-500' : 'text-white'}
+                />
+                {formik.touched.subject && formik.errors.subject ? <div className="text-red-500">{formik.errors.subject}</div> : null}
+              </div>
+
+              <div className="input flex flex-col gap-1">
+                <label htmlFor="message" className='text-zinc-400 text-lg font-semibold'>Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.message}
+                  className={formik.touched.message && formik.errors.message ? 'border-red-500' : 'text-white'}
+                />
+                {formik.touched.message && formik.errors.message ? <div className="text-red-500">{formik.errors.message}</div> : null}
+              </div>
+
+              <div className='flex justify-center mt-7'>
+                <button type="submit" className="send-button py-3 flex justify-center rounded-lg">
+                  <p className='text-lg text-white font-semibold'>Send</p>
+                </button>
+              </div>
+            </form>
+          </div>
           </div>
 
         </div>
@@ -175,6 +250,8 @@ const Home = () => {
           <li> <img src="/assets/linkedin.png" alt="Logo" className='s-img' /></li>
         </ul>
       </div>
+
+      <ToastContainer/>
 
     </div>
 
