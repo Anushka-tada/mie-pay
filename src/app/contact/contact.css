@@ -1,6 +1,6 @@
 .contactpage{
     background-image: url('/assets/backround.png');
-
+    background-position: center;
     display: flex;
     align-items: center;
     height: 100vh;
@@ -8,17 +8,18 @@
 .contact{
     width: 100%;
 }
-.s-img{
-   width: 30px;
-   height: 30px;
-}
+
 .contact-form{
-    box-shadow: -7px 2px 35px 5px rgb(29, 29, 29);
-    width: 85%;
+    /* box-shadow: -16px 23px 45px -10px rgb(13, 13, 13); */
+    width: 50%;
+    border-radius: 46px;
+    box-shadow: -21.212px 25.279px 34px rgba(0, 0, 0, 0.41);
+
+   
 }
 input {
     
-    border-bottom: 2px solid rgb(185, 185, 185);
+    border-bottom: 2px solid rgb(162, 162, 162);
     outline: none !important;
 }
 
@@ -31,10 +32,12 @@ input:focus {
 
 .send-button{
     width: 270px;
-    box-shadow: 1px 4px 35px 5px rgb(21, 21, 21);
+    /* box-shadow: 1px 4px 35px 5px rgb(21, 21, 21); */
+    box-shadow: -7.08px 10.903px 9px rgba(0, 0, 0, 0.85);
+
 }
 .contact-text{
-    width: 410px;
+    width: 330px;
 }
 
 .social-media{
@@ -49,6 +52,7 @@ input:focus {
         align-items: center;
         padding: 30px 0px;
     }
+    
 }
 
 @media(max-width:1024px){
@@ -76,7 +80,15 @@ input:focus {
 }
 
 .contact-us{
-    width: 80%;
+    font-size: 35px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #fed200;
+    
+    /* font-family: "Nexa Light"; */
+}
+.contact-h{
+    width: 210px;
 }
 .contact-sections{
     width: 74%;
@@ -92,3 +104,22 @@ input:focus {
         width: 100%;
     }
 }
+
+.text-1{
+    font-size: 21px;
+    height: 56px;
+}
+
+.contact-social-media{
+    bottom: 4%;
+}
+
+.contact-scroll {
+    position: absolute;
+    right: 0%;
+    bottom: 4%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+  }
