@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react"
 import React from 'react'
 import "./home.css"
-import "../about/about.css"
-import "../contact/contact.css"
+import "./about.css"
+import "./contact.css"
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
