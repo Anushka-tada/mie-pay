@@ -449,34 +449,52 @@ const Home = () => {
     },
   });
 
+  // useEffect(() => {
+  //   // FullPage.js initialization
+  //   const fullPageInstance = $('#fullpage').fullpage({
+  //     autoScrolling: true,
+  //     navigation: false,
+  //     anchors: ['home', 'about', 'contact'],
+  //   });
+  
+  //   // Scroll detection logic
+  //   const handleScroll = () => {
+  //     if (window.scrollY > 0) {
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
+  
+  //   window.addEventListener("scroll", handleScroll);
+  
+  //   // Cleanup function
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  
+  //     // Destroy FullPage.js instance if needed
+  //     if ($.fn.fullpage && $.fn.fullpage.destroy) {
+  //       $.fn.fullpage.destroy('all');
+  //     }
+  //   };
+  // }, []);
+  
   useEffect(() => {
-    // FullPage.js initialization
-    const fullPageInstance = $('#fullpage').fullpage({
-      autoScrolling: true,
-      navigation: false,
-      anchors: ['home', 'about', 'contact'],
-    });
+    if (typeof window !== "undefined") {
+      // FullPage.js initialization
+      const fullPageInstance = $('#fullpage').fullpage({
+        autoScrolling: true,
+        navigation: true,
+        anchors: ['home', 'about', 'contact'],
+      });
   
-    // Scroll detection logic
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-  
-    // Cleanup function
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-  
-      // Destroy FullPage.js instance if needed
-      if ($.fn.fullpage && $.fn.fullpage.destroy) {
-        $.fn.fullpage.destroy('all');
-      }
-    };
+      // Cleanup function
+      return () => {
+        if ($.fn.fullpage && $.fn.fullpage.destroy) {
+          $.fn.fullpage.destroy("all");
+        }
+      };
+    }
   }, []);
   
   
