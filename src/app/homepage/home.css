@@ -124,3 +124,23 @@ font-weight: 700;
     width: 150px;
    }
   
+   /* General animations for FullPage.js sections */
+.section {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .animate-in {
+    opacity: 1;
+    transform: translateY(0); /* Slide into view */
+  }
+  
+  .animate-out {
+    opacity: 0;
+    transform: translateY(50px); /* Slide out of view */
+  }
+  
+
+ 
+  

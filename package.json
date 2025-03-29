@@ -11,10 +11,12 @@
   "dependencies": {
     "axios": "^1.8.4",
     "formik": "^2.4.6",
-    "fullpage.js": "^4.0.34",
+    "fullpage.js": "^2.9.7",
+    "jquery": "^3.7.1",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-page-scroller": "^3.0.1",
     "react-toastify": "^11.0.5",
     "yup": "^1.6.1"
   },

@@ -7,8 +7,6 @@ const HomePageWrapper = () => {
   return(<>
 
  <HomePage/>
- {/* <AboutPage/>
- <ContactPage/> */}
 
   </>)
   
