@@ -92,19 +92,6 @@
     }
 
 }
-@media(max-width:408px){
-    .left-img , .right-img {
-        height: 38%; 
-    }
-    .center-img{ 
-       height: 32%; 
-    }
-    .about-text{
-        width: 90% !important;
-       
-        }
-
-}
 
 
 
@@ -125,16 +112,74 @@
     }
 }
 
-@media (max-width:434px){
-    .miepay{
-        bottom: 65%;
-    }
-}
-@media (max-width:342px){
+
+/* @media (max-width:342px){
     .miepay{
         bottom: 70%;
     }
+} */
+@media (max-width:426px){
+    .about-text{
+        font-size: 12px !important;
+        line-height: 15px !important;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .app-store{
+        width: 90px !important;
+     }
+  
+     .google-pay{
+      width: 90px !important;
+     }
+     .app-outer{
+        gap: 8px;
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+     }
+     .miepay{
+        bottom: 45%;
+    }
+    .left-img , .right-img {
+        height: 50%; 
+    }
+    .center-img{ 
+       height: 55%; 
+    }
+    .about-text{
+        width: 80% !important;
+        }
+        .about-scroll{
+            right: -10% !important;
+            bottom: 3% !important;
+         }
+         .about-social-media{
+            left: -7% !important;
+            bottom: 3% !important;
+         }  
+         .social-media-inner{
+            gap: 8px;
+
+         }
+         .s-img{
+            width: 10px !important;  
+        }
+      .scroll-text{
+        font-size: 10px !important;
+      }
+      .line{
+height: 36px !important;
+margin-top: 50px !important;
+      }
 }
+.app-store{
+    width: 150px;
+ }
+
+ .google-pay{
+  width: 150px;
+ }
 
 .about-text{
 width: 50%;
@@ -179,4 +224,6 @@ text-align: center;
     background-color: #ffffff;
     margin-top: 70px;
   }
+  
+
   

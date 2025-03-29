@@ -73,6 +73,7 @@ font-weight: 700;
     .nav-logo{
         width: 13%;
    }
+   
 }
 
 .home-social-media{
@@ -120,13 +121,7 @@ font-weight: 700;
   }
    */
 
-   .app-store{
-      width: 150px;
-   }
-
-   .google-pay{
-    width: 150px;
-   }
+   
   
    /* General animations for FullPage.js sections */
 .section {
@@ -148,3 +143,14 @@ font-weight: 700;
 
  
   
+  @media (max-width:426px){
+
+    .scroll{
+        right: -10% !important;
+        bottom: 3% !important;
+     }
+     .home-social-media{
+        left: -7% !important;
+        bottom: 3% !important;
+     }  
+  }
