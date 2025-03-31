@@ -79,18 +79,18 @@ input:focus {
 }
 @media(max-width:426px){
     .xl{
-       font-size: 13px !important;
+       font-size: 12px !important;
     }
     .text-1{
-        font-size: 13px !important;
+        font-size: 12px !important;
         height: 37px !important;
     }
     .contact-h{
-        width: 130px !important;
+        width: 120px !important;
     }
     .contact-form{
-        padding: 14px !important;
-        width: 85%;
+        padding: 14px 25px !important;
+        width: 84%;
         border-radius: 11px;
        
     }
@@ -98,8 +98,9 @@ input:focus {
         gap: 7px;
     }
     .contact-us{
-        font-size: 18px !important;
+        font-size: 14px !important;
         margin-bottom: 4px !important;
+        letter-spacing: 5px !important;
     }
      .send-button{
         width: 170px;
@@ -107,10 +108,10 @@ input:focus {
         margin-top: 4px;
      }
      .send-button p{
-        font-size: 13px !important;
+        font-size: 12px !important;
      }
      label{
-        font-size: 12px !important;
+        font-size: 11px !important;
      }
      .contact-text{
         width: 60%;
@@ -118,14 +119,69 @@ input:focus {
      .input{
         gap: 1px;
      }
+     input{
+        font-size: 11px !important;
+        border-bottom: 1px solid rgb(162, 162, 162);
+     }
      .contact-scroll{
-        right: -15% !important;
-        bottom: 3% !important;
+        right: -10% !important;
+            bottom: 3% !important;
      }
      .contact-social-media{
-        left: -9% !important;
+        left: -7% !important;
         bottom: 3% !important;
      }
+}
+
+/* media query for 768 screen */
+
+@media (min-width:427px) and (max-width:768px){
+    .xl{
+        font-size: 13px !important;
+     }
+     .text-1{
+         font-size: 13px !important;
+         height: 37px !important;
+     }
+     .contact-h{
+         width: 130px !important;
+     }
+     .contact-form{
+         padding: 14px 25px !important;
+         width: 84%;
+         border-radius: 11px;
+        
+     }
+     .contact-sections{
+         gap: 16px;
+     }
+     .contact-us{
+         font-size: 16px !important;
+         margin-bottom: 4px !important;
+         letter-spacing: 5px !important;
+     }
+      .send-button{
+         width: 170px;
+         padding: 5px;
+         margin-top: 4px;
+      }
+      .send-button p{
+         font-size: 12px !important;
+      }
+      label{
+         font-size: 12px !important;
+      }
+      .contact-text{
+         width: 60%;
+      }
+      .input{
+         gap: 1px;
+      }
+      input{
+         font-size: 12px !important;
+         border-bottom: 1px solid rgb(162, 162, 162);
+      }
+    
 }
 
 .contact-us{

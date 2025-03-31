@@ -471,7 +471,10 @@ const Home = () => {
 
   const handleClick = (link) => {
     setActiveLink(link);
-  };
+    console.log(link)
+    
+};
+
 
   return (
     <div className="relative" id="fullpage">
@@ -479,20 +482,22 @@ const Home = () => {
       <div className="homepage relative section" data-anchor="home">
         <div className={`navbar absolute top-0 w-full flex lg:flex-row justify-between px-5 lg:px-16 items-start transition-colors duration-300 pt-7 lg:py-12`}>
           <img src="/assets/logo.png" alt="Logo" className="nav-logo" />
+          <div className="flex flex-col items-end text-right">
           <button className="lg:hidden block text-white text-3xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             ☰
           </button>
           <ul className={`flex flex-col lg:flex-row gap-4 lg:gap-16 items-center ${isMenuOpen ? "block" : "hidden lg:flex"}`}>
-            <a href="#home" onClick={() => handleClick("home")}>
+            <a href="#home" onClick={() => handleClick("home")} >
               <li className={`nav-link ${activeLink === "home" ? "clicked" : ""}`}>Home</li>
             </a>
             <a href="#about" onClick={() => handleClick("about")}>
-              <li className={`nav-link ${activeLink === "about" ? "clicked" : ""}`}>About us</li>
+              <li className={`nav-link ${activeLink === "about" ? "clicked" : ""}`}>About</li>
             </a>
             <a href="#contact" onClick={() => handleClick("contact")}>
               <li className={`nav-link ${activeLink === "contact" ? "clicked" : ""}`}>Contact</li>
             </a>
           </ul>
+          </div>
         </div>
 
         <div className="herosection flex flex-col items-center">
@@ -523,6 +528,7 @@ const Home = () => {
         {/* Navbar */}
         <div className={`navbar absolute top-0 w-full flex lg:flex-row justify-between px-5 lg:px-16 items-start transition-colors duration-300 pt-7 lg:py-12`}>
           <img src="/assets/logo.png" alt="Logo" className="nav-logo" />
+          <div className="flex flex-col items-end">
           <button className="lg:hidden block text-white text-3xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             ☰
           </button>
@@ -531,12 +537,13 @@ const Home = () => {
               <li className={`nav-link ${activeLink === "home" ? "clicked" : ""}`}>Home</li>
             </a>
             <a href="#about" onClick={() => handleClick("about")}>
-              <li className={`nav-link ${activeLink === "about" ? "clicked" : ""}`}>About us</li>
+              <li className={`nav-link ${activeLink === "about" ? "clicked" : ""}`}>About</li>
             </a>
             <a href="#contact" onClick={() => handleClick("contact")}>
               <li className={`nav-link ${activeLink === "contact" ? "clicked" : ""}`}>Contact</li>
             </a>
           </ul>
+          </div>
         </div>
 
         {/* About Section Content */}
@@ -587,41 +594,25 @@ const Home = () => {
 
         <div className={`navbar absolute top-0 w-full  flex lg:flex-row justify-between px-5 lg:px-16  items-start transition-colors duration-300  pt-7 lg:py-12`} >
           <img src="/assets/logo.png" alt="Logo" className="nav-logo" />
+          <div className="flex flex-col items-end">
           <button
-            className="lg:hidden block text-white text-3xl"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            ☰
-          </button>
-          <ul
-            className={`flex flex-col lg:flex-row gap-4 lg:gap-16 items-center ${isMenuOpen ? "block" : "hidden lg:flex"
-              }`}
-          >
+            className="lg:hidden block text-white text-3xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>  ☰ 
+            </button>
+
+          <ul className={`flex flex-col lg:flex-row gap-4 lg:gap-16 items-center ${isMenuOpen ? "block" : "hidden lg:flex"
+              }`} >
             <a href="#home" onClick={() => handleClick("home")}>
-              <li
-                className={`nav-link ${activeLink === "home" ? "clicked" : ""
-                  }`}
-              >
-                Home
-              </li>
+              <li  className={`nav-link ${activeLink === "home" ? "clicked" : "" }`} > Home </li>
             </a>
             <a href="#about" onClick={() => handleClick("about")}>
-              <li
-                className={` nav-link ${activeLink === "about" ? "clicked" : ""
-                  }`}
-              >
-                About us
-              </li>
+              <li className={` nav-link ${activeLink === "about" ? "clicked" : ""  }`}  >  About </li>
             </a>
             <a href="#contact" onClick={() => handleClick("contact")}>
-              <li
-                className={` nav-link ${activeLink === "contact" ? "clicked" : ""
-                  }`}
-              >
-                Contact
-              </li>
+              <li className={` nav-link ${activeLink === "contact" ? "clicked" : ""  }`} >  Contact  </li>
             </a>
           </ul>
+          </div>
+
         </div>
         <div className="contact mt-5 flex flex-col items-center">
           <div className="contact-sections flex flex-wrap-reverse justify-center xl:flex-nowrap lg:flex-nowrap md:flex-nowrap items-center gap-20">

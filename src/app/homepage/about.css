@@ -93,10 +93,6 @@
 
 }
 
-
-
-
-
 .download{
    color: rgb(248, 224, 72);
 }
@@ -118,6 +114,18 @@
         bottom: 70%;
     }
 } */
+/* @media(min-width:1026) and (max-width:1332px) {
+   
+    .miepay{
+        bottom: 40% !important;
+       
+         width: 35% !important;
+    }
+
+} */
+
+/* media query for mobile screen */
+
 @media (max-width:426px){
     .about-text{
         font-size: 12px !important;
@@ -158,6 +166,57 @@
             left: -7% !important;
             bottom: 3% !important;
          }  
+         .social-media-inner{
+            gap: 8px;
+
+         }
+         .s-img{
+            width: 10px !important;  
+        }
+      .scroll-text{
+        font-size: 10px !important;
+      }
+      .line{
+height: 36px !important;
+margin-top: 50px !important;
+      }
+}
+
+/* media query for 768 screen */
+
+@media(min-width:427px)and (max-width:768px){
+    .about-text{
+        font-size: 14px !important;
+        line-height: 15px !important;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .app-store{
+        width: 100px !important;
+     }
+  
+     .google-pay{
+      width: 100px !important;
+     }
+     .app-outer{
+        gap: 8px;
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+     }
+     .miepay{
+        bottom: 38%;
+    }
+    .left-img , .right-img {
+        height: 55%; 
+    }
+    .center-img{ 
+       height: 60%; 
+    }
+    .about-text{
+        width: 70% !important;
+        }
+       
          .social-media-inner{
             gap: 8px;
 
